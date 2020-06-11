@@ -1,0 +1,21 @@
+                  Op code          Value 1      Value 2
+
+RasPi -> Arduino Commands:
+digital_read      0b00010000       pin#         (unused)
+pin_init          0b11110000 (240) pin#         pin_function (sensor, digital I/O, etc)
+reset             0b11000000 (192)
+ping              0b00011000 (24)  (unused)
+request           0b00010111 (23)  (unused)
+
+
+Arduino -> RasPi Commands:
+digital_data      0b11101111 (239) pin#         value
+error             0b11111111       value
+pin_ack           0b00001111 (15)
+startup           0b11000001 (193)
+
+
+Error Codes:
+invalid_pin       0b00000001       pin#
+invalid_packet    0b00000010
+
